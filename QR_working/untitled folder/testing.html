@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<!-- saved from url=(0059)https://fiddle.jshell.net/rohith_th/Lpemu17k/21/show/light/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <title></title>
+</head>
+<body>
+
+  <script src="//d3js.org/d3.v3.min.js"></script>
+  <script>
+
+  d3.csv("testing.csv", function(error, data) {
+    if (error) throw error;
+
+    data.forEach(function(d) {
+      d.date = parseDate(d.date);
+      d.temperature = +d.temperature;
+    });
+
+    </script>
+
+  </body></html>

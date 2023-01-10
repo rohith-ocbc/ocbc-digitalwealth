@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!-- saved from url=(0059)https://fiddle.jshell.net/rohith_th/Lpemu17k/21/show/light/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <title></title>
+
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <script type="text/javascript" src="./jquery-2.1.3.js.download"></script>
+
+    <link rel="stylesheet" type="text/css" href="./result-light.css">
+
+
+  <style id="compiled-css" type="text/css">
+
+  </style>
+
+
+  <!-- TODO: Missing CoffeeScript 2 -->
+
+  <script type="text/javascript">
+
+
+
+  function findCol2FromCol1(data, col1Value) {
+
+      var result;
+      //console.log(col1Value);
+      data.forEach(function(d) {
+          //console.log(d.colu1 + ':' + d.colu2);
+
+          if (d.colu1 === col1Value) {
+              //console.log('Checked true');
+              result = d.colu2;
+          }
+
+        });
+
+      return result;
+
+  }
+
+  d3.csv('testing.csv', function(data){
+      console.log(findCol2FromCol1(data, 'aki'));
+      var custinput = $('#textt').val();
+      var a = findCol2FromCol1(data, custinput);
+});
+
+function generateBarCode()
+{
+    var nric = $('#textt').val();
+    return a;
+    var b = nric;
+    var url = 'https://api.qrserver.com/v1/create-qr-code/?data=' + nric + b + '&amp;size=50x50';
+    $('#barcode').attr('src', url);
+}
+
+
+</script>
+
+</head>
+<body>
+      <br><b>QR Authentication</b><br><a>One Touch Account Sign Up</a>
+
+  <form action="https://fiddle.jshell.net/rohith_th/Lpemu17k/21/show/light/#" method="post">
+  <input id="textt" type="text" value="Please Enter Your First Name in lower case" style="Width:30%" onblur="generateBarCode();">
+
+  <img id="barcode" src="./saved_resource" alt="" title="HELLO" width="100" height="100">
+
+
+
+		</form>
+
+  <br><b>One Touch Account Sign Up Process</b><br>1. Enter you first name in lower case in the above text field<br>2. Scan the QR code and use it as your password<br>3. Remember, your user name is your first name in lower case<br><br>That's  it.<br><br>
+  <a href="../index.html">Let's Login Now!</a>
+
+    <div>
+    <p id="result"></p></div>
+
+
+  <script>
+    // tell the embed parent frame the height of the content
+    if (window.parent && window.parent.parent){
+      window.parent.parent.postMessage(["resultsFrame", {
+        height: document.body.getBoundingClientRect().height,
+        slug: "Lpemu17k"
+      }], "*")
+    }
+
+    // always overwrite window.name, in case users try to set it manually
+    window.name = "result"
+  </script>
+
+
+</body></html>

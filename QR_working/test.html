@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!-- saved from url=(0059)https://fiddle.jshell.net/rohith_th/Lpemu17k/21/show/light/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title></title>
+</head>
+<body>
+
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script>
+// get the data
+
+  d3.csv('https://docs.google.com/spreadsheets/d/17wv4pews7n1ZHReCaT-SX_qjEva4mL_7Bil7FFioFoc/export?format=csv', function(data){
+
+      console.log(findCol2FromCol1(data, 'haha'));
+      var inputwas = "ned"//document.getElementById("textt").value
+      var a = findCol2FromCol1(data, inputwas)
+      alert(a);
+
+  });
+
+
+
+
+  function findCol2FromCol1(data, col1Value) {
+
+      var result;
+      //console.log(col1Value);
+      data.forEach(function(d) {
+          //console.log(d.colu1 + ':' + d.colu2);
+
+          if (d.colu1 === col1Value) {
+              //console.log('Checked true');
+              result = d.colu2;
+          }
+
+        });
+
+      return result;
+
+  }
+  </script>
+
+</body></html>
